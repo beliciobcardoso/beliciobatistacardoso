@@ -1,65 +1,151 @@
-import Image from "next/image";
+import {
+  Hero,
+  Pitch,
+  Skills,
+  Projects,
+  CTA,
+} from "@/src/components";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="flex flex-col">
+      {/* Hero Section */}
+      <Hero
+        headline="Engenharia de Software de Alta Performance"
+        subheadline="Belício Cardoso. 24 anos conectando tecnologia de ponta aos objetivos do seu negócio. Especialista em ecossistemas Fullstack e DevOps."
+        primaryCTA={{
+          label: "Ver Projetos",
+          href: "#projects",
+        }}
+        secondaryCTA={{
+          label: "Baixar CV",
+          href: "/cv.pdf",
+        }}
+      />
+
+      {/* Pitch Section */}
+      <Pitch
+        title="Sobre Mim"
+        content="Iniciei minha jornada tecnológica na virada do milênio. Vi linguagens nascerem e morrerem, o que me deu a capacidade crítica de escolher a ferramenta certa para o problema certo. Hoje, meu foco é construir sistemas resilientes, monitoráveis e escaláveis. A pós-graduação em Engenharia de Software consolidou uma visão arquitetural que transcende apenas escrever código."
+        keyFocus={[
+          "Solidez técnica através de Clean Code e Princípios SOLID",
+          "Arquitetura escalável com visão estratégica de negócio",
+          "Observabilidade e DevOps como cultura de qualidade",
+        ]}
+      />
+
+      {/* Skills Section */}
+      <Skills
+        title="Expertise & Ferramentas"
+        subtitle="Uma década de evolução contínua em stacks modernas"
+        categories={[
+          {
+            category: "Backend",
+            skills: [
+              "NestJS (Expert)",
+              "Node.js / TypeScript",
+              "Arquitetura de Microsserviços",
+              "APIs RESTful e GraphQL",
+              "Bancos de dados relacionais e NoSQL",
+            ],
+          },
+          {
+            category: "Frontend",
+            skills: [
+              "React / Next.js",
+              "TypeScript",
+              "Tailwind CSS",
+              "Performance Web",
+              "Acessibilidade (a11y)",
+            ],
+          },
+          {
+            category: "DevOps & Cloud",
+            skills: [
+              "Docker & Kubernetes",
+              "CI/CD Pipelines",
+              "Prometheus & Grafana",
+              "AWS / Google Cloud",
+              "Observabilidade em Tempo Real",
+            ],
+          },
+          {
+            category: "Metodologias",
+            skills: [
+              "Clean Code & SOLID",
+              "Commits Semânticos",
+              "Test-Driven Development",
+              "Gestão Estratégica de TI",
+              "Mentoria Técnica",
+            ],
+          },
+        ]}
+      />
+
+      {/* Projects Section */}
+      <Projects
+        title="Projetos de Destaque"
+        subtitle="Soluções que transformam dados em ações"
+        projects={[
+          {
+            id: "my-time-trace",
+            name: "My Time Trace",
+            description:
+              "Plataforma de rastreamento de tempo e produtividade com observabilidade em tempo real. Integra conceitos de DevOps em ferramentas de gestão de projetos, fornecendo visibilidade estratégica sobre alocação de recursos.",
+            role: "Arquiteto & Full-Stack Developer",
+            technologies: [
+              "NestJS",
+              "React",
+              "PostgreSQL",
+              "Docker",
+              "Grafana",
+            ],
+            link: "#",
+          },
+          {
+            id: "fin-domini",
+            name: "FinDomini",
+            description:
+              "Centralização inteligente de finanças pessoais e empresariais. Sistema de gestão financeira que consolida múltiplas fontes de dados e oferece insights analíticos através de dashboards customizáveis.",
+            role: "Criador & Desenvolvedor Principal",
+            technologies: [
+              "NestJS",
+              "Next.js",
+              "MongoDB",
+              "Stripe API",
+              "Tailwind CSS",
+            ],
+            link: "#",
+          },
+          {
+            id: "nexus-crm",
+            name: "Nexus CRM",
+            description:
+              "Plataforma de CRM inovadora construída sobre o WhatsApp. Demonstra a capacidade de estender plataformas existentes com lógica de negócio sofisticada, criando ecossistemas integrados.",
+            role: "Lead Developer & Architect",
+            technologies: [
+              "NestJS",
+              "WhatsApp API",
+              "PostgreSQL",
+              "Redis",
+              "Node.js",
+            ],
+            link: "#",
+          },
+        ]}
+      />
+
+      {/* CTA Section */}
+      <CTA
+        title="Precisa de uma arquitetura que suporte o crescimento?"
+        description="Disponível para consultoria técnica, mentoria e projetos estratégicos. Vamos conversar sobre como transformar sua visão em código resiliente e escalável."
+        primaryButton={{
+          label: "Vamos Conversar",
+          href: "mailto:contato@beliciocardoso.dev",
+          variant: "primary",
+        }}
+        secondaryText="Ou envie um email para contato@beliciocardoso.dev"
+      />
+    </main>
   );
 }
