@@ -1,0 +1,110 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - heading "Engenharia de Software de Alta Performance" [level=1] [ref=e5]
+        - paragraph [ref=e6]: Belício Cardoso. 24 anos conectando tecnologia de ponta aos objetivos do seu negócio. Especialista em ecossistemas Fullstack e DevOps.
+        - generic [ref=e7]:
+          - link "Ver Projetos" [ref=e8] [cursor=pointer]:
+            - /url: "#projects"
+          - link "Baixar CV" [ref=e9] [cursor=pointer]:
+            - /url: /cv.pdf
+    - article [ref=e10]:
+      - generic [ref=e11]:
+        - heading "Sobre Mim" [level=2] [ref=e12]
+        - paragraph [ref=e13]: Iniciei minha jornada tecnológica na virada do milênio. Vi linguagens nascerem e morrerem, o que me deu a capacidade crítica de escolher a ferramenta certa para o problema certo. Hoje, meu foco é construir sistemas resilientes, monitoráveis e escaláveis. A pós-graduação em Engenharia de Software consolidou uma visão arquitetural que transcende apenas escrever código.
+        - generic [ref=e14]:
+          - heading "Foco Principal" [level=3] [ref=e15]
+          - list [ref=e16]:
+            - listitem [ref=e17]: Solidez técnica através de Clean Code e Princípios SOLID
+            - listitem [ref=e19]: Arquitetura escalável com visão estratégica de negócio
+            - listitem [ref=e21]: Observabilidade e DevOps como cultura de qualidade
+    - region "Expertise & Ferramentas" [ref=e23]:
+      - generic [ref=e24]:
+        - heading "Expertise & Ferramentas" [level=2] [ref=e25]
+        - paragraph [ref=e26]: Uma década de evolução contínua em stacks modernas
+        - generic [ref=e27]:
+          - generic [ref=e28]:
+            - heading "Backend" [level=3] [ref=e29]
+            - list [ref=e30]:
+              - listitem [ref=e31]: NestJS (Expert)
+              - listitem [ref=e33]: Node.js / TypeScript
+              - listitem [ref=e35]: Arquitetura de Microsserviços
+              - listitem [ref=e37]: APIs RESTful e GraphQL
+              - listitem [ref=e39]: Bancos de dados relacionais e NoSQL
+          - generic [ref=e41]:
+            - heading "Frontend" [level=3] [ref=e42]
+            - list [ref=e43]:
+              - listitem [ref=e44]: React / Next.js
+              - listitem [ref=e46]: TypeScript
+              - listitem [ref=e48]: Tailwind CSS
+              - listitem [ref=e50]: Performance Web
+              - listitem [ref=e52]: Acessibilidade (a11y)
+          - generic [ref=e54]:
+            - heading "DevOps & Cloud" [level=3] [ref=e55]
+            - list [ref=e56]:
+              - listitem [ref=e57]: Docker & Kubernetes
+              - listitem [ref=e59]: CI/CD Pipelines
+              - listitem [ref=e61]: Prometheus & Grafana
+              - listitem [ref=e63]: AWS / Google Cloud
+              - listitem [ref=e65]: Observabilidade em Tempo Real
+          - generic [ref=e67]:
+            - heading "Metodologias" [level=3] [ref=e68]
+            - list [ref=e69]:
+              - listitem [ref=e70]: Clean Code & SOLID
+              - listitem [ref=e72]: Commits Semânticos
+              - listitem [ref=e74]: Test-Driven Development
+              - listitem [ref=e76]: Gestão Estratégica de TI
+              - listitem [ref=e78]: Mentoria Técnica
+    - region "Projetos de Destaque" [ref=e80]:
+      - generic [ref=e81]:
+        - heading "Projetos de Destaque" [level=2] [ref=e82]
+        - paragraph [ref=e83]: Soluções que transformam dados em ações
+        - generic [ref=e84]:
+          - article [ref=e85]:
+            - generic [ref=e87]:
+              - heading "My Time Trace" [level=3] [ref=e88]:
+                - link "My Time Trace" [ref=e89] [cursor=pointer]:
+                  - /url: "#"
+              - paragraph [ref=e90]: Arquiteto & Full-Stack Developer
+            - paragraph [ref=e91]: Plataforma de rastreamento de tempo e produtividade com observabilidade em tempo real. Integra conceitos de DevOps em ferramentas de gestão de projetos, fornecendo visibilidade estratégica sobre alocação de recursos.
+            - generic [ref=e92]:
+              - generic [ref=e93]: NestJS
+              - generic [ref=e94]: React
+              - generic [ref=e95]: PostgreSQL
+              - generic [ref=e96]: Docker
+              - generic [ref=e97]: Grafana
+          - article [ref=e98]:
+            - generic [ref=e100]:
+              - heading "FinDomini" [level=3] [ref=e101]:
+                - link "FinDomini" [ref=e102] [cursor=pointer]:
+                  - /url: "#"
+              - paragraph [ref=e103]: Criador & Desenvolvedor Principal
+            - paragraph [ref=e104]: Centralização inteligente de finanças pessoais e empresariais. Sistema de gestão financeira que consolida múltiplas fontes de dados e oferece insights analíticos através de dashboards customizáveis.
+            - generic [ref=e105]:
+              - generic [ref=e106]: NestJS
+              - generic [ref=e107]: Next.js
+              - generic [ref=e108]: MongoDB
+              - generic [ref=e109]: Stripe API
+              - generic [ref=e110]: Tailwind CSS
+          - article [ref=e111]:
+            - generic [ref=e113]:
+              - heading "Nexus CRM" [level=3] [ref=e114]:
+                - link "Nexus CRM" [ref=e115] [cursor=pointer]:
+                  - /url: "#"
+              - paragraph [ref=e116]: Lead Developer & Architect
+            - paragraph [ref=e117]: Plataforma de CRM inovadora construída sobre o WhatsApp. Demonstra a capacidade de estender plataformas existentes com lógica de negócio sofisticada, criando ecossistemas integrados.
+            - generic [ref=e118]:
+              - generic [ref=e119]: NestJS
+              - generic [ref=e120]: WhatsApp API
+              - generic [ref=e121]: PostgreSQL
+              - generic [ref=e122]: Redis
+              - generic [ref=e123]: Node.js
+    - region "Call to action" [ref=e124]:
+      - generic [ref=e125]:
+        - heading "Precisa de uma arquitetura que suporte o crescimento?" [level=2] [ref=e126]
+        - paragraph [ref=e127]: Disponível para consultoria técnica, mentoria e projetos estratégicos. Vamos conversar sobre como transformar sua visão em código resiliente e escalável.
+        - link "Vamos Conversar" [ref=e128] [cursor=pointer]:
+          - /url: mailto:contato@beliciocardoso.dev
+        - paragraph [ref=e129]: Ou envie um email para contato@beliciocardoso.dev
+  - alert [ref=e130]
