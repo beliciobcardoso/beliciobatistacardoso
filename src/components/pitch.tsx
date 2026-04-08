@@ -1,9 +1,9 @@
 /**
- * Pitch Section Component
- * 
- * Responsabilidade: Apresentar o "Elevator Pitch" com narrativa profissional.
- * Padrão: Presentational component (stateless)
- * Acessibilidade: Estrutura semântica com article
+ * Pitch Section Component — "Sobre Mim"
+ *
+ * Tipografia como design. Prose rico com 3 pilares renderizados
+ * como painéis de status inline — não como bullets genéricos.
+ * Profundidade: border-left como único acento estrutural.
  */
 
 interface PitchProps {
@@ -12,35 +12,52 @@ interface PitchProps {
   readonly keyFocus: readonly string[];
 }
 
+const PILLAR_LABELS = ["Solidez", "Modernidade", "Entrega"] as const;
+
 export function Pitch({ title, content, keyFocus }: PitchProps) {
   return (
-    <article className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
-      <div className="mx-auto max-w-4xl">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-8">
+    <article
+      id="about"
+      className="section-divider py-24 px-4 sm:px-6 lg:px-8 bg-slate-900/40"
+      aria-labelledby="pitch-heading"
+    >
+      <div className="mx-auto max-w-5xl">
+        {/* Section label */}
+        <p className="font-mono text-[0.7rem] text-slate-600 tracking-widest uppercase mb-5">
+          01 / Sobre
+        </p>
+
+        <h2
+          id="pitch-heading"
+          className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-50 mb-8"
+        >
           {title}
         </h2>
 
-        <p className="text-lg leading-8 text-gray-600 dark:text-gray-300 mb-8">
+        {/* Prose */}
+        <p className="text-slate-400 text-lg leading-relaxed max-w-3xl">
           {content}
         </p>
 
-        {/* Key Focus Pillars */}
+        {/* Pillar grid */}
         {keyFocus.length > 0 && (
-          <div className="mt-8">
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-900 dark:text-white mb-4">
-              Foco Principal
-            </h3>
-            <ul className="space-y-3">
-              {keyFocus.map((item, index) => (
-                <li
-                  key={index}
-                  className="flex items-start gap-3 text-gray-600 dark:text-gray-300"
+          <div className="mt-12 grid sm:grid-cols-3 gap-4">
+            {keyFocus.map((item, index) => (
+              <div
+                key={index}
+                className="pl-4 border-l border-green-500/40
+                           hover:border-green-500/70
+                           transition-colors duration-150"
+              >
+                <p
+                  className="font-mono text-[0.65rem] text-green-500/70 tracking-widest uppercase mb-1"
+                  aria-hidden="true"
                 >
-                  <span className="inline-block w-2 h-2 mt-2 bg-blue-600 rounded-full flex-shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+                  {PILLAR_LABELS[index] ?? `0${index + 1}`}
+                </p>
+                <p className="text-sm text-slate-300 leading-relaxed">{item}</p>
+              </div>
+            ))}
           </div>
         )}
       </div>

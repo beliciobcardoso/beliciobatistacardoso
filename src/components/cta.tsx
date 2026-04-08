@@ -1,9 +1,9 @@
 /**
- * CTA (Call-To-Action) Section Component
- * 
- * Responsabilidade: Apresentar chamada principal para conversão/contato.
- * Padrão: Presentational component
- * Acessibilidade: Semantic HTML com role apropriado
+ * CTA Section Component
+ *
+ * Seção de conversão com prompt de terminal como elemento visual.
+ * Centrada, densa, precisa. Sem gradientes decorativos.
+ * O "$ contact" reforça a assinatura do sistema inteiro.
  */
 
 interface CTAProps {
@@ -17,37 +17,52 @@ interface CTAProps {
   readonly secondaryText?: string;
 }
 
-export function CTA({
-  title,
-  description,
-  primaryButton,
-  secondaryText,
-}: CTAProps) {
-  const buttonClass =
-    primaryButton.variant === "secondary"
-      ? "border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-900"
-      : "bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800";
+export function CTA({ title, description, primaryButton, secondaryText }: CTAProps) {
+  const isPrimary = primaryButton.variant !== "secondary";
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8" role="region" aria-label="Call to action">
-      <div className="mx-auto max-w-3xl text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">
+    <section
+      id="contact"
+      className="section-divider py-24 px-4 sm:px-6 lg:px-8"
+      aria-labelledby="cta-heading"
+    >
+      <div className="mx-auto max-w-2xl text-center">
+        {/* Section label */}
+        <p className="font-mono text-[0.7rem] text-slate-600 tracking-widest uppercase mb-5">
+          04 / Contato
+        </p>
+
+        <h2
+          id="cta-heading"
+          className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-50 mb-5"
+        >
           {title}
         </h2>
 
-        <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+        <p className="text-slate-400 text-base leading-relaxed mb-10 max-w-xl mx-auto">
           {description}
         </p>
 
         <a
           href={primaryButton.href}
-          className={`inline-block px-8 py-3 font-semibold rounded-lg transition-colors duration-200 ${buttonClass}`}
+          aria-label={primaryButton.label}
+          className={`inline-flex items-center px-6 py-3 text-sm font-semibold rounded-md
+                      transition-colors duration-150
+                      focus-visible:outline focus-visible:outline-2
+                      focus-visible:outline-offset-2 focus-visible:outline-green-500
+                      ${
+                        isPrimary
+                          ? "bg-green-500 text-[#020617] hover:bg-green-400 active:bg-green-600"
+                          : "border border-slate-700 text-slate-400 hover:border-slate-600 hover:text-slate-200 hover:bg-slate-800/40"
+                      }`}
         >
           {primaryButton.label}
         </a>
 
+        {/* Terminal prompt */}
         {secondaryText && (
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-6">
+          <p className="font-mono text-[0.72rem] text-slate-700 mt-8">
+            <span aria-hidden="true" className="text-slate-800">$ </span>
             {secondaryText}
           </p>
         )}

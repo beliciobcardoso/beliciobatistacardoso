@@ -3,6 +3,7 @@
  * Central export point following Clean Code principles
  */
 
+export { Navbar } from "./navbar";
 export { Hero } from "./hero";
 export { Pitch } from "./pitch";
 export { Skills } from "./skills";
