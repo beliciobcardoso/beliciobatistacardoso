@@ -1,5 +1,8 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
+  "build": {
+    "command": "pnpm build"
+  },
   "main": ".open-next/worker.js",
   "name": "beliciobatistacardoso",
   "compatibility_date": "2026-04-09",

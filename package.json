@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "postbuild": "opennextjs-cloudflare build --skipNextBuild",
+    "postbuild": "mkdir -p .next/standalone/.next/server && if [ -f .next/server/pages-manifest.json ]; then cp .next/server/pages-manifest.json .next/standalone/.next/server/pages-manifest.json; else printf '{}' > .next/standalone/.next/server/pages-manifest.json; fi && opennextjs-cloudflare build --skipNextBuild",
     "build:next": "next build",
     "dev": "next dev",
     "start": "next start",
