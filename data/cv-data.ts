@@ -2,8 +2,8 @@ export const cvData = {
   personal: {
     name: "Belício Batista Cardoso",
     title: "Engenheiro de Software Sênior | Arquiteto de Soluções",
-    email: "belicio@example.com",
-    phone: "+55 (77) 9 9370-6925",
+    email: "belloinfo@gmail.com",
+    phone: "+55 (71) 9 9370-6925",
     location: "Salvador, Bahia, Brasil",
     website: "https://belicio.bcardoso.nom.br",
     linkedin: "https://www.linkedin.com/in/beliciobcardoso/",
@@ -14,11 +14,11 @@ export const cvData = {
 
   experience: [
     {
-      title: "Founder & CTO",
-      company: "My Time Trace",
-      period: "2022 - Presente",
+      title: "Analista de Desenvolvimento Pleno",
+      company: "Nova Corrente",
+      period: "2025 - Presente",
       description:
-        "Criador e gestor técnico de plataforma de monitoramento de produtividade e rastreamento de tempo. Arquitetura fullstack (Node.js/NestJS, React, PostgreSQL). DevOps com Docker e observabilidade via Grafana/Prometheus.",
+        "Desenvolvedor fullstack (Node.js/NestJS, React, PostgreSQL). DevOps com Docker e observabilidade via Grafana/Prometheus.",
       skills: ["NestJS", "React", "PostgreSQL", "Docker", "Grafana", "Prometheus"],
     },
     {
@@ -50,15 +50,15 @@ export const cvData = {
   education: [
     {
       degree: "Pós-graduação em Engenharia de Software",
-      institution: "Universidade (em andamento)",
-      year: "2024 - Presente",
+      institution: "UNIVERSIDADE ESTÁCIO DE SÁ (em andamento)",
+      year: "2025 - Presente",
       focus:
         "Arquitetura de Sistemas, Metodologias Ágeis, Computação em Nuvem",
     },
     {
-      degree: "Bacharelado em Ciência da Computação",
-      institution: "Universidade Federal da Bahia",
-      year: "1999 - 2003",
+      degree: "ANÁLISE E DESENVOLVIMENTO DE SISTEMAS",
+      institution: "UNIVERSIDADE ESTÁCIO DE SÁ",
+      year: "2018 - 2021",
     },
   ],
 
@@ -126,6 +126,6 @@ export const cvData = {
 
   languages: [
     { language: "Português", level: "Nativo" },
-    { language: "Inglês", level: "Avançado" },
+    { language: "Inglês", level: "Básico" },
   ],
 };

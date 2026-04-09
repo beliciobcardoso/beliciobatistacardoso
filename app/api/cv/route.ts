@@ -283,9 +283,10 @@ function CVPDFDocument() {
 
 export async function GET() {
   try {
-    const pdfBuffer = (await renderToBuffer(CVPDFDocument())) as Buffer;
+    const pdfBuffer = await renderToBuffer(CVPDFDocument());
+    const pdfBytes = new Uint8Array(pdfBuffer);
 
-    return new Response(pdfBuffer as any, {
+    return new Response(pdfBytes, {
       headers: {
         "Content-Type": "application/pdf",
         "Content-Disposition": 'attachment; filename="Belicio-Cardoso-CV.pdf"',
