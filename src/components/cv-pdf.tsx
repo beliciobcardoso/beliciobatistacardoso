@@ -5,7 +5,6 @@ import {
   Text,
   View,
   StyleSheet,
-  Link as PDFLink,
 } from "@react-pdf/renderer";
 import { cvData } from "@/data/cv-data";
 
