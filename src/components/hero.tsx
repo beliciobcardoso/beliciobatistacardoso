@@ -58,7 +58,7 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
                          bg-green-500 text-[#020617] text-sm font-semibold rounded-md
                          hover:bg-green-400 active:bg-green-600
                          transition-colors duration-150
-                         focus-visible:outline focus-visible:outline-2
+                         focus-visible:outline-2
                          focus-visible:outline-offset-2 focus-visible:outline-green-500"
             >
               {primaryCTA.label}
@@ -70,7 +70,7 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
                          hover:border-slate-600 hover:text-slate-200 hover:bg-slate-800/40
                          active:bg-slate-800
                          transition-colors duration-150
-                         focus-visible:outline focus-visible:outline-2
+                         focus-visible:outline-2
                          focus-visible:outline-offset-2 focus-visible:outline-green-500"
             >
               {secondaryCTA.label}

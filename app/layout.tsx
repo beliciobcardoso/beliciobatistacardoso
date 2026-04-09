@@ -29,7 +29,7 @@ const SEO_CONFIG = {
     "Belício Batista Cardoso",
     "Bahia",
   ],
-  baseUrl: process.env.NEXT_PUBLIC_BASE_URL || "https://beliciocardoso.dev",
+  baseUrl: process.env.NEXT_PUBLIC_BASE_URL || "https://belicio.bcardoso.nom.br",
 };
 
 export const metadata: Metadata = {

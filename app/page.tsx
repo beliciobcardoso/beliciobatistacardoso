@@ -121,10 +121,10 @@ export default function Home() {
           description="Disponível para consultoria técnica, mentoria e projetos estratégicos. Vamos conversar sobre como transformar sua visão em código resiliente e escalável."
           primaryButton={{
             label: "Iniciar Conversa",
-            href: "mailto:contato@beliciocardoso.dev",
+            href: "mailto:belloinfo@gmail.com",
             variant: "primary",
           }}
-          secondaryText="contact belicio@beliciocardoso.dev"
+          secondaryText="contact belloinfo@gmail.com"
         />
       </main>
     </>

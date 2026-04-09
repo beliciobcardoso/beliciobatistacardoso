@@ -27,7 +27,7 @@ export function Navbar() {
           href="#"
           aria-label="Belício Cardoso — Início"
           className="flex items-center gap-2.5 rounded
-                     focus-visible:outline focus-visible:outline-2
+                     focus-visible:outline-2
                      focus-visible:outline-offset-2 focus-visible:outline-green-500"
         >
           <span
@@ -38,7 +38,7 @@ export function Navbar() {
             BC
           </span>
           <span className="font-mono text-slate-500 text-sm hidden sm:block tracking-tight">
-            beliciocardoso.dev
+            belicio.bcardoso.nom.br
           </span>
         </a>
 
@@ -52,7 +52,7 @@ export function Navbar() {
                   className="px-3 py-1.5 text-sm text-slate-500
                              hover:text-slate-200 hover:bg-slate-800/50
                              rounded transition-colors duration-150
-                             focus-visible:outline focus-visible:outline-2
+                             focus-visible:outline-2
                              focus-visible:outline-offset-2 focus-visible:outline-green-500"
                 >
                   {label}
