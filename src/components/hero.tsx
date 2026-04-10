@@ -11,7 +11,7 @@ interface HeroProps {
   readonly headline: string;
   readonly subheadline: string;
   readonly primaryCTA: { label: string; href: string };
-  readonly secondaryCTA: { label: string; href: string };
+  readonly secondaryCTA: { label: string; href: string; newTab?: boolean };
 }
 
 export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroProps) {
@@ -65,6 +65,8 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
             </a>
             <a
               href={secondaryCTA.href}
+              target={secondaryCTA.newTab ? "_blank" : undefined}
+              rel={secondaryCTA.newTab ? "noopener noreferrer" : undefined}
               className="inline-flex items-center px-5 py-2.5
                          border border-slate-700 text-slate-400 text-sm font-medium rounded-md
                          hover:border-slate-600 hover:text-slate-200 hover:bg-slate-800/40
