@@ -112,14 +112,13 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
           <figure className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 shadow-[0_0_0_1px_rgba(148,163,184,0.06)] mt-4">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,197,94,0.18),transparent_40%),linear-gradient(180deg,rgba(15,23,42,0.15),rgba(2,6,23,0.85))]" />
             <div className="relative p-4 sm:p-5">
-              <div className="overflow-hidden rounded-xl border border-slate-700/70 bg-stone-400/10">
+              <div className="relative aspect-square overflow-hidden rounded-xl border border-slate-700/70 bg-stone-400/10">
                 <Image
                   src="/brand-portrait.webp"
                   alt="Belício Batista Cardoso"
-                  width={800}
-                  height={800}
+                  fill
                   priority
-                  className="h-full w-[80%] object-contain mx-auto"
+                  className="object-contain"
                   sizes="(min-width: 800px) 460px, (min-width: 640px) 50vw, 100vw"
                 />
               </div>
