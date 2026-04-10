@@ -17,8 +17,13 @@ interface CTAProps {
   readonly secondaryText?: string;
 }
 
+function isExternalHref(href: string): boolean {
+  return /^https?:\/\//i.test(href);
+}
+
 export function CTA({ title, description, primaryButton, secondaryText }: CTAProps) {
   const isPrimary = primaryButton.variant !== "secondary";
+  const shouldOpenInNewTab = isExternalHref(primaryButton.href);
 
   return (
     <section
@@ -46,6 +51,8 @@ export function CTA({ title, description, primaryButton, secondaryText }: CTAPro
         <a
           href={primaryButton.href}
           aria-label={primaryButton.label}
+          target={shouldOpenInNewTab ? "_blank" : undefined}
+          rel={shouldOpenInNewTab ? "noopener noreferrer" : undefined}
           className={`inline-flex items-center px-6 py-3 text-sm font-semibold rounded-md
                       transition-colors duration-150
                       focus-visible:outline focus-visible:outline-2

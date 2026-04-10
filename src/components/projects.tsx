@@ -22,6 +22,10 @@ interface ProjectsProps {
   readonly projects: readonly Project[];
 }
 
+function isExternalHref(href: string): boolean {
+  return /^https?:\/\//i.test(href);
+}
+
 export function Projects({ title, subtitle, projects }: ProjectsProps) {
   return (
     <section
@@ -48,6 +52,8 @@ export function Projects({ title, subtitle, projects }: ProjectsProps) {
 
         <div className="space-y-4">
           {projects.map((project) => (
+            // Open only external links in a new tab.
+            // Internal anchors (e.g. "#") remain same-tab.
             <article
               key={project.id}
               className="relative pl-5 pr-5 py-5 rounded-md
@@ -56,7 +62,7 @@ export function Projects({ title, subtitle, projects }: ProjectsProps) {
                          transition-colors duration-200
                          /* Status border = service is active */
                          before:absolute before:left-0 before:top-4 before:bottom-4
-                         before:w-[2px] before:bg-green-500/60 before:rounded-full
+                         before:w-0.5 before:bg-green-500/60 before:rounded-full
                          before:hover:bg-green-500
                          before:transition-colors before:duration-200"
             >
@@ -76,12 +82,16 @@ export function Projects({ title, subtitle, projects }: ProjectsProps) {
                       {project.link ? (
                         <a
                           href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`Ver projeto ${project.name} (abre em nova aba)`}
+                          target={isExternalHref(project.link) ? "_blank" : undefined}
+                          rel={isExternalHref(project.link) ? "noopener noreferrer" : undefined}
+                          aria-label={
+                            isExternalHref(project.link)
+                              ? `Ver projeto ${project.name} (abre em nova aba)`
+                              : `Ver projeto ${project.name}`
+                          }
                           className="hover:text-green-400
                                      transition-colors duration-150 rounded-sm
-                                     focus-visible:outline focus-visible:outline-2
+                                     focus-visible:outline-2
                                      focus-visible:outline-offset-2 focus-visible:outline-green-500"
                         >
                           {project.name}
@@ -98,7 +108,7 @@ export function Projects({ title, subtitle, projects }: ProjectsProps) {
               </div>
 
               {/* Description */}
-              <p className="text-sm text-slate-400 leading-relaxed mb-4 break-words">
+              <p className="text-sm text-slate-400 leading-relaxed mb-4 wrap-break-word">
                 {project.description}
               </p>
 

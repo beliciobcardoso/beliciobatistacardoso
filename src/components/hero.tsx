@@ -14,7 +14,14 @@ interface HeroProps {
   readonly secondaryCTA: { label: string; href: string; newTab?: boolean };
 }
 
+function isExternalHref(href: string): boolean {
+  return /^https?:\/\//i.test(href);
+}
+
 export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroProps) {
+  const primaryIsExternal = isExternalHref(primaryCTA.href);
+  const secondaryShouldOpenInNewTab = secondaryCTA.newTab || isExternalHref(secondaryCTA.href);
+
   return (
     <section
       className="min-h-[calc(100vh-3.5rem)] flex items-center
@@ -54,6 +61,8 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
           <div className="mt-10 flex items-center gap-3 flex-wrap">
             <a
               href={primaryCTA.href}
+              target={primaryIsExternal ? "_blank" : undefined}
+              rel={primaryIsExternal ? "noopener noreferrer" : undefined}
               className="inline-flex items-center px-5 py-2.5
                          bg-green-500 text-[#020617] text-sm font-semibold rounded-md
                          hover:bg-green-400 active:bg-green-600
@@ -65,8 +74,8 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
             </a>
             <a
               href={secondaryCTA.href}
-              target={secondaryCTA.newTab ? "_blank" : undefined}
-              rel={secondaryCTA.newTab ? "noopener noreferrer" : undefined}
+              target={secondaryShouldOpenInNewTab ? "_blank" : undefined}
+              rel={secondaryShouldOpenInNewTab ? "noopener noreferrer" : undefined}
               className="inline-flex items-center px-5 py-2.5
                          border border-slate-700 text-slate-400 text-sm font-medium rounded-md
                          hover:border-slate-600 hover:text-slate-200 hover:bg-slate-800/40

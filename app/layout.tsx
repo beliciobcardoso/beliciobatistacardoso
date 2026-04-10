@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     title: "Belício Cardoso — Engenheiro de Software",
     description: "24 anos transformando código em impacto de negócio",
     images: ["/og-image.png"],
-    creator: "@beliciocardoso",
+    creator: "@beliciobcardoso",
   },
   robots: {
     index: true,

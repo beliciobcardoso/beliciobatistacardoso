@@ -118,7 +118,7 @@ export default function Home() {
         {/* CTA */}
         <CTA
           title="Precisa de uma arquitetura que suporte o crescimento?"
-          description="Disponível para consultoria técnica, mentoria e projetos estratégicos. Vamos conversar sobre como transformar sua visão em código resiliente e escalável."
+          description="Disponível para consultoria técnica, metória e projetos estratégicos. Vamos conversar sobre como transformar sua visão em código resiliente e escalável."
           primaryButton={{
             label: "Iniciar Conversa",
             href: "mailto:belloinfo@gmail.com",

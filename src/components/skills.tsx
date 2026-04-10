@@ -71,7 +71,7 @@ export function Skills({ title, subtitle, categories }: SkillsProps) {
                     key={skillIndex}
                     className="flex items-baseline gap-2 min-w-0"
                   >
-                    <span aria-hidden="true" className="font-mono text-slate-700 text-xs flex-shrink-0">
+                    <span aria-hidden="true" className="font-mono text-slate-700 text-xs shrink-0">
                       ▸
                     </span>
                     <span className="text-sm text-slate-400">{skill}</span>
