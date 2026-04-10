@@ -32,6 +32,8 @@ const SEO_CONFIG = {
   baseUrl: process.env.NEXT_PUBLIC_BASE_URL || "https://belicio.bcardoso.nom.br",
 };
 
+const BRAND_ASSET_VERSION = "20260410-1";
+
 export const metadata: Metadata = {
   title: SEO_CONFIG.title,
   description: SEO_CONFIG.description,
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     description: SEO_CONFIG.description,
     images: [
       {
-        url: "/og-image.png",
+        url: `/og-image.png?v=${BRAND_ASSET_VERSION}`,
         width: 1200,
         height: 630,
         alt: "Belício Cardoso — 24 Anos de Engenharia de Software",
@@ -60,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Belício Cardoso — Engenheiro de Software",
     description: "24 anos transformando código em impacto de negócio",
-    images: ["/og-image.png"],
+    images: [`/og-image.png?v=${BRAND_ASSET_VERSION}`],
     creator: "@beliciobcardoso",
   },
   robots: {
@@ -88,8 +90,8 @@ export default function RootLayout({
       className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href={`/favicon.png?v=${BRAND_ASSET_VERSION}`} type="image/png" sizes="any" />
+        <link rel="apple-touch-icon" href={`/apple-touch-icon.png?v=${BRAND_ASSET_VERSION}`} />
         <meta name="theme-color" content="#020617" />
       </head>
       <body suppressHydrationWarning className="min-h-screen flex flex-col">

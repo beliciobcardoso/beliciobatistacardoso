@@ -2,9 +2,11 @@
  * Navbar Component
  *
  * Fixed top navigation — dark, ultra-minimal.
- * Logo: BC monogram + domain. Links: scroll anchors.
+ * Logo: avatar pessoal + domain. Links: scroll anchors.
  * Depth strategy: border-bottom only (borders-only approach).
  */
+
+import Image from "next/image";
 
 export function Navbar() {
   const links = [
@@ -32,10 +34,16 @@ export function Navbar() {
         >
           <span
             aria-hidden="true"
-            className="inline-flex items-center justify-center w-7 h-7
-                       bg-green-500 text-[#020617] text-xs font-bold rounded font-mono"
+            className="inline-flex items-center justify-center w-7 h-7 rounded-full overflow-hidden border border-slate-700"
           >
-            BC
+            <Image
+              src="/brand-avatar.webp"
+              alt=""
+              width={160}
+              height={160}
+              className="h-full w-full object-cover"
+              sizes="28px"
+            />
           </span>
           <span className="font-mono text-slate-500 text-sm hidden sm:block tracking-tight">
             belicio.bcardoso.nom.br

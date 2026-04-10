@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "portrait:generate": "tsx scripts/generate-profile-photo.ts",
     "cv:generate": "tsx scripts/generate-cv-pdf.ts",
-    "prebuild": "pnpm run cv:generate",
+    "prebuild": "pnpm run portrait:generate && pnpm run cv:generate",
     "build": "next build",
     "postbuild": "mkdir -p .next/standalone/.next/server && if [ -f .next/server/pages-manifest.json ]; then cp .next/server/pages-manifest.json .next/standalone/.next/server/pages-manifest.json; else printf '{}' > .next/standalone/.next/server/pages-manifest.json; fi && opennextjs-cloudflare build --skipNextBuild",
     "build:next": "next build",
@@ -30,6 +31,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.2",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "tsx": "^4.21.0",
     "typescript": "^5",

@@ -2,10 +2,11 @@
  * Hero Section Component
  *
  * Layout: 2 colunas — conteúdo à esquerda, terminal de status à direita.
- * Signature: "belicio.service" renderizado como output de systemctl status.
- * O painel terminal é decorativo (aria-hidden) — dados redundantes com o corpo da página.
+ * A coluna direita destaca a foto profissional da marca pessoal.
  * Depth: borders-only. Sem sombras.
  */
+
+import Image from "next/image";
 
 interface HeroProps {
   readonly headline: string;
@@ -106,67 +107,55 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
           </div>
         </div>
 
-        {/* ── Right column: Terminal Panel (decorative) ── */}
-        <div aria-hidden="true" className="hidden lg:block">
-          <div className="terminal-panel">
-            {/* macOS-style header */}
-            <div className="terminal-header">
-              <span className="terminal-dot bg-red-500/60" />
-              <span className="terminal-dot bg-yellow-500/60" />
-              <span className="terminal-dot bg-green-500/60" />
-              <span className="terminal-title">~ belicio.service</span>
-            </div>
+        {/* ── Right column: Portrait Card ── */}
+        <div className="w-[85%] max-w-md mx-auto lg:max-w-none">
+          <figure className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 shadow-[0_0_0_1px_rgba(148,163,184,0.06)] mt-4">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,197,94,0.18),transparent_40%),linear-gradient(180deg,rgba(15,23,42,0.15),rgba(2,6,23,0.85))]" />
+            <div className="relative p-4 sm:p-5">
+              <div className="overflow-hidden rounded-xl border border-slate-700/70 bg-stone-400/10">
+                <Image
+                  src="/brand-portrait.webp"
+                  alt="Belício Batista Cardoso"
+                  width={800}
+                  height={800}
+                  priority
+                  className="h-full w-[80%] object-contain mx-auto"
+                  sizes="(min-width: 800px) 460px, (min-width: 640px) 50vw, 100vw"
+                />
+              </div>
 
-            {/* Output */}
-            <div className="terminal-body">
-              <p className="text-green-400">
-                <span className="mr-1">●</span>
-                <span className="text-slate-100 font-medium">belicio.service</span>
-                {" — Engenheiro de Software"}
-              </p>
-              <p className="text-slate-600 pl-4">
-                {"   Loaded: experience="}
-                <span className="text-green-400">24yr</span>
-                {"; type=fullstack"}
-              </p>
-              <p className="text-slate-600 pl-4">
-                {"   Active: "}
-                <span className="text-green-400">active (running)</span>
-                {" since Jan 2000"}
-              </p>
-              <p className="text-slate-600 pl-4">
-                {"   PID: BC-01 (architect · mentor)"}
-              </p>
-              <p className="mt-3 text-slate-500"> Módulos carregados:</p>
-              {[
-                ["backend  ", "NestJS · TypeScript · APIs"],
-                ["frontend ", "React · Next.js · Vite"],
-                ["devops   ", "Docker · CI/CD · Grafana"],
-                ["database ", "PostgreSQL · MongoDB · Redis"],
-                ["arch     ", "Microsserviços · SOLID · DDD"],
-              ].map(([mod, stack]) => (
-                <p key={mod} className="text-slate-600 pl-2">
-                  {"  ▸ "}
-                  <span className="text-slate-500">{mod}</span>
-                  {" "}
-                  <span className="text-slate-300">{stack}</span>
-                </p>
-              ))}
-              <p className="mt-3 text-slate-700">
-                {"Jan 2000: "}
-                <span className="text-slate-500">sistema iniciado com sucesso</span>
-              </p>
-              <p className="text-slate-700">
-                {"2025:     "}
-                <span className="text-slate-500">Pós-grad. Engenharia de Software </span>
-                <span className="text-green-500">[loaded]</span>
-              </p>
-              <p className="mt-3 text-slate-600">
-                <span className="text-slate-700">$ </span>
-                <span className="terminal-cursor" />
-              </p>
+              <figcaption className="mt-4 flex flex-col gap-3">
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <p className="font-mono text-[0.65rem] tracking-[0.24em] uppercase text-slate-500">
+                      Marca pessoal
+                    </p>
+                    <h2 className="text-xl font-semibold text-slate-50">
+                      Belício Batista Cardoso
+                    </h2>
+                  </div>
+                  <span className="inline-flex items-center rounded-full border border-green-500/25 bg-green-500/10 px-2.5 py-1 font-mono text-[0.6rem] tracking-[0.2em] uppercase text-green-400">
+                    Disponível
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-2 gap-2 text-sm">
+                  <div className="rounded-lg border border-slate-800 bg-slate-950/60 px-3 py-2">
+                    <p className="font-mono text-[0.62rem] uppercase tracking-[0.2em] text-slate-500">
+                      Cargo
+                    </p>
+                    <p className="mt-1 text-slate-200">Arquiteto de Soluções</p>
+                  </div>
+                  <div className="rounded-lg border border-slate-800 bg-slate-950/60 px-3 py-2">
+                    <p className="font-mono text-[0.62rem] uppercase tracking-[0.2em] text-slate-500">
+                      Base
+                    </p>
+                    <p className="mt-1 text-slate-200">Salvador, Bahia</p>
+                  </div>
+                </div>
+              </figcaption>
             </div>
-          </div>
+          </figure>
         </div>
 
       </div>
