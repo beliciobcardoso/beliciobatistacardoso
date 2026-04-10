@@ -92,7 +92,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#020617" />
       </head>
-      <body className="min-h-screen flex flex-col">
+      <body suppressHydrationWarning className="min-h-screen flex flex-col">
         <a href="#main-content" className="skip-link">
           Ir para o conteúdo principal
         </a>

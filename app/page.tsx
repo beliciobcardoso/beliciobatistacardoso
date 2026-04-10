@@ -18,7 +18,7 @@ export default function Home() {
           headline="Engenharia de Software de Alta Performance"
           subheadline="Belício Cardoso. 24 anos conectando tecnologia de ponta aos objetivos do seu negócio. Especialista em ecossistemas Fullstack e DevOps."
           primaryCTA={{ label: "Ver Projetos", href: "#projects" }}
-          secondaryCTA={{ label: "Baixar CV",   href: "/cv.pdf"   }}
+          secondaryCTA={{ label: "Baixar CV",   href: "/api/cv"   }}
         />
 
         {/* Sobre Mim */}
