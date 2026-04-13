@@ -2,7 +2,7 @@ import { mkdir } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import sharp from "sharp";
 
-const inputPath = resolve(process.cwd(), "public", "belicio.jpg");
+const inputPath = resolve(process.cwd(), "public", "belicio.jpeg");
 
 const portraitPath = resolve(process.cwd(), "public", "brand-portrait.webp");
 const avatarPath = resolve(process.cwd(), "public", "brand-avatar.webp");
