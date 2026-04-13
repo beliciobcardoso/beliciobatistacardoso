@@ -1,11 +1,3 @@
-/**
- * Hero Section Component
- *
- * Layout: 2 colunas — conteúdo à esquerda, terminal de status à direita.
- * A coluna direita destaca a foto profissional da marca pessoal.
- * Depth: borders-only. Sem sombras.
- */
-
 import Image from "next/image";
 
 interface HeroProps {
@@ -24,52 +16,34 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
   const secondaryShouldOpenInNewTab = secondaryCTA.newTab || isExternalHref(secondaryCTA.href);
 
   return (
-    <section
-      className="min-h-[calc(100vh-3.5rem)] flex items-center
-                 pt-14 py-20 px-4 sm:px-6 lg:px-8"
-      aria-labelledby="hero-heading"
-    >
-      <div className="mx-auto max-w-7xl w-full grid lg:grid-cols-[1fr_460px] gap-14 lg:gap-20 items-center">
-
-        {/* ── Left column ── */}
-        <div>
-          {/* Status indicator */}
-          <div className="flex items-center gap-2 mb-8">
-            <span
-              aria-hidden="true"
-              className="status-pulse inline-block w-2 h-2 rounded-full bg-green-500"
-            />
-            <span className="font-mono text-[0.7rem] text-slate-600 tracking-widest uppercase">
-              Disponível para projetos · Bahia, BR
+    <section className="px-5 py-10 md:px-10 md:py-20 xl:px-30" aria-labelledby="hero-heading">
+      <div className="mx-auto flex w-full max-w-360 flex-col items-start gap-10 lg:flex-row lg:items-center lg:gap-15">
+        <div className="w-full lg:flex-1">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-(--border-accent) bg-[#22c55e15] px-3 py-1 md:hidden">
+            <span aria-hidden="true" className="size-1.5 rounded-full bg-(--accent) status-pulse" />
+            <span className="font-mono text-[11px] text-(--accent)">
+              Disponível · Bahia, BR
             </span>
           </div>
 
-          {/* Headline */}
-          <h1
-            id="hero-heading"
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight
-                       text-slate-50 leading-[1.07]"
-          >
+          <p className="font-mono text-[10px] tracking-[0.18em] text-(--accent) md:text-xs md:tracking-[0.16em]">
+            ENGENHEIRO DE SOFTWARE · FULLSTACK · DEVOPS
+          </p>
+
+          <h1 id="hero-heading" className="mt-5 max-w-[18ch] text-4xl leading-[1.1] font-bold text-(--text-primary) md:text-6xl">
             {headline}
           </h1>
 
-          {/* Subheadline */}
-          <p className="mt-6 text-base sm:text-lg leading-relaxed text-slate-400 max-w-xl">
+          <p className="mt-5 max-w-[63ch] text-[15px] leading-relaxed text-(--text-secondary) md:text-lg">
             {subheadline}
           </p>
 
-          {/* CTAs */}
-          <div className="mt-10 flex items-center gap-3 flex-wrap">
+          <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-4">
             <a
               href={primaryCTA.href}
               target={primaryIsExternal ? "_blank" : undefined}
               rel={primaryIsExternal ? "noopener noreferrer" : undefined}
-              className="inline-flex items-center px-5 py-2.5
-                         bg-green-500 text-[#020617] text-sm font-semibold rounded-md
-                         hover:bg-green-400 active:bg-green-600
-                         transition-colors duration-150
-                         focus-visible:outline-2
-                         focus-visible:outline-offset-2 focus-visible:outline-green-500"
+              className="inline-flex min-w-42.5 items-center justify-center rounded-lg bg-(--accent) px-7 py-3.5 text-sm font-semibold text-[#020617] transition-colors hover:bg-[#4ade80]"
             >
               {primaryCTA.label}
             </a>
@@ -77,86 +51,51 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
               href={secondaryCTA.href}
               target={secondaryShouldOpenInNewTab ? "_blank" : undefined}
               rel={secondaryShouldOpenInNewTab ? "noopener noreferrer" : undefined}
-              className="inline-flex items-center px-5 py-2.5
-                         border border-slate-700 text-slate-400 text-sm font-medium rounded-md
-                         hover:border-slate-600 hover:text-slate-200 hover:bg-slate-800/40
-                         active:bg-slate-800
-                         transition-colors duration-150
-                         focus-visible:outline-2
-                         focus-visible:outline-offset-2 focus-visible:outline-green-500"
+              className="inline-flex min-w-42.5 items-center justify-center rounded-lg border border-(--text-muted) px-7 py-3.5 text-sm font-medium text-(--text-primary) transition-colors hover:border-(--text-secondary)"
             >
               {secondaryCTA.label}
             </a>
           </div>
 
-          {/* Stat strip */}
-          <div className="mt-12 flex items-center gap-8 flex-wrap">
+          <div className="mt-8 flex w-full justify-between gap-5 sm:mt-10 sm:max-w-xl sm:justify-start sm:gap-10">
             {[
               { value: "24", label: "Anos de carreira" },
-              { value: "3+",  label: "Produtos próprios" },
-              { value: "∞",   label: "Sistemas resilientes" },
+              { value: "3+", label: "Produtos próprios" },
+              { value: "∞", label: "Sistemas resilientes" },
             ].map(({ value, label }) => (
-              <div key={label}>
-                <p className="font-mono text-2xl font-bold text-slate-100 leading-none
-                              [font-variant-numeric:tabular-nums]">
+              <div key={label} className="text-center sm:text-left">
+                <p className="font-mono text-[28px] leading-none font-bold text-(--text-primary) md:text-[34px]">
                   {value}
                 </p>
-                <p className="text-xs text-slate-600 mt-1">{label}</p>
+                <p className="mt-1 text-[11px] text-(--text-muted)">{label}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* ── Right column: Portrait Card ── */}
-        <div className="w-[85%] max-w-md mx-auto lg:max-w-none">
-          <figure className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 shadow-[0_0_0_1px_rgba(148,163,184,0.06)] mt-4">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,197,94,0.18),transparent_40%),linear-gradient(180deg,rgba(15,23,42,0.15),rgba(2,6,23,0.85))]" />
-            <div className="relative p-4 sm:p-5">
-              <div className="relative aspect-square overflow-hidden rounded-xl border border-slate-700/70 bg-stone-400/10">
-                <Image
-                  src="/brand-portrait.webp"
-                  alt="Belício Batista Cardoso"
-                  fill
-                  priority
-                  className="object-contain"
-                  sizes="(min-width: 800px) 460px, (min-width: 640px) 50vw, 100vw"
-                />
-              </div>
+        <figure className="w-full overflow-hidden rounded-2xl border border-(--border-subtle) bg-(--bg-surface) lg:w-105">
+          <div className="relative h-60 w-full md:h-80">
+            <Image
+              src="/brand-portrait.webp"
+              alt="Belício Cardoso"
+              fill
+              priority
+              className="object-cover"
+              sizes="(min-width: 1024px) 420px, (min-width: 768px) 50vw, 100vw"
+            />
+          </div>
 
-              <figcaption className="mt-4 flex flex-col gap-3">
-                <div className="flex items-center justify-between gap-3">
-                  <div>
-                    <p className="font-mono text-[0.65rem] tracking-[0.24em] uppercase text-slate-500">
-                      Marca pessoal
-                    </p>
-                    <h2 className="text-xl font-semibold text-slate-50">
-                      Belício Batista Cardoso
-                    </h2>
-                  </div>
-                  <span className="inline-flex items-center rounded-full border border-green-500/25 bg-green-500/10 px-2.5 py-1 font-mono text-[0.6rem] tracking-[0.2em] uppercase text-green-400">
-                    Disponível
-                  </span>
-                </div>
+          <figcaption className="flex flex-col gap-2 px-4 py-4 md:px-6 md:py-5">
+            <h2 className="text-xl font-semibold text-(--text-primary)">Belício Cardoso</h2>
+            <p className="text-sm text-(--text-secondary)">Arquiteto de Soluções</p>
+            <p className="text-[13px] text-(--text-muted)">Salvador, Bahia</p>
 
-                <div className="grid grid-cols-2 gap-2 text-sm">
-                  <div className="rounded-lg border border-slate-800 bg-slate-950/60 px-3 py-2">
-                    <p className="font-mono text-[0.62rem] uppercase tracking-[0.2em] text-slate-500">
-                      Cargo
-                    </p>
-                    <p className="mt-1 text-slate-200">Arquiteto de Soluções</p>
-                  </div>
-                  <div className="rounded-lg border border-slate-800 bg-slate-950/60 px-3 py-2">
-                    <p className="font-mono text-[0.62rem] uppercase tracking-[0.2em] text-slate-500">
-                      Base
-                    </p>
-                    <p className="mt-1 text-slate-200">Salvador, Bahia</p>
-                  </div>
-                </div>
-              </figcaption>
-            </div>
-          </figure>
-        </div>
-
+            <span className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-full border border-(--border-accent) bg-[#22c55e15] px-2.5 py-1">
+              <span aria-hidden="true" className="size-1.5 rounded-full bg-(--accent)" />
+              <span className="text-[11px] text-(--accent)">Disponível</span>
+            </span>
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

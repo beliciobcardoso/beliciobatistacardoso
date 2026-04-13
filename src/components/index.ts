@@ -9,3 +9,4 @@ export { Pitch } from "./pitch";
 export { Skills } from "./skills";
 export { Projects } from "./projects";
 export { CTA } from "./cta";
+export { Footer } from "./footer";

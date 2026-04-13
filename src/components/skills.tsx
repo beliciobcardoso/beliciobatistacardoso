@@ -1,10 +1,3 @@
-/**
- * Skills Section Component
- *
- * Categorias renderizadas como módulos de um sistema.
- * Lista densa no estilo de log/terminal — não cards com ícones.
- * Profundidade: border-only cards com hover sutil.
- */
 import type { ReactNode } from "react";
 
 interface SkillCategory {
@@ -23,58 +16,42 @@ export function Skills({ title, subtitle, categories }: SkillsProps) {
   return (
     <section
       id="skills"
-      className="section-divider py-24 px-4 sm:px-6 lg:px-8"
+      className="section-divider px-5 py-12 md:px-10 md:py-20 xl:px-30"
       aria-labelledby="skills-title"
     >
-      <div className="mx-auto max-w-5xl">
-        {/* Section label */}
-        <p className="font-mono text-[0.7rem] text-slate-600 tracking-widest uppercase mb-5">
-          02 / Expertise
-        </p>
+      <div className="mx-auto w-full max-w-360">
+        <p className="font-mono text-[11px] tracking-[0.16em] text-(--accent)">02 / EXPERTISE</p>
 
-        <h2
-          id="skills-title"
-          className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-50 mb-3"
-        >
+        <h2 id="skills-title" className="mt-3 text-4xl font-bold text-(--text-primary)">
           {title}
         </h2>
 
         {subtitle && (
-          <p className="text-slate-500 text-sm mb-12 font-mono">{subtitle}</p>
+          <p className="mt-2 text-sm text-(--text-secondary) md:text-base">{subtitle}</p>
         )}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {categories.map((category, index) => (
             <div
               key={index}
-              className="p-5 rounded-md border border-slate-800
-                         bg-slate-900/30
-                         hover:border-slate-700 hover:bg-slate-900/60
-                         transition-colors duration-200"
+              className="rounded-xl border border-(--border-subtle) bg-(--bg-surface) px-4 py-4 md:px-6 md:py-6"
             >
-              {/* Category header */}
-              <div className="flex items-center gap-2 mb-4">
+              <div className="mb-4 flex items-center gap-2">
                 {category.icon && (
-                  <span aria-hidden="true" className="text-green-500">
+                  <span aria-hidden="true" className="text-(--accent)">
                     {category.icon}
                   </span>
                 )}
-                <h3 className="font-mono text-xs text-green-400/80 tracking-widest uppercase">
+                <h3 className="text-lg font-semibold text-(--text-primary)">
                   {category.category}
                 </h3>
               </div>
 
-              {/* Skill list */}
-              <ul className="space-y-1.5" aria-label={`Skills de ${category.category}`}>
+              <ul className="space-y-2.5" aria-label={`Skills de ${category.category}`}>
                 {category.skills.map((skill, skillIndex) => (
-                  <li
-                    key={skillIndex}
-                    className="flex items-baseline gap-2 min-w-0"
-                  >
-                    <span aria-hidden="true" className="font-mono text-slate-700 text-xs shrink-0">
-                      ▸
-                    </span>
-                    <span className="text-sm text-slate-400">{skill}</span>
+                  <li key={skillIndex} className="flex items-start gap-2">
+                    <span aria-hidden="true" className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-(--accent)" />
+                    <span className="text-sm text-(--text-secondary)">{skill}</span>
                   </li>
                 ))}
               </ul>

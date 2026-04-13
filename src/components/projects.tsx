@@ -1,12 +1,3 @@
-/**
- * Projects Section Component
- *
- * Cada projeto = um serviço no painel de controle.
- * Border-left colorida = indicador de status (ativo/running).
- * Sem sombras. Profundidade apenas por bordes e contraste de superfície.
- * translate="no" em nomes de tecnologias. aria-label descritivo em links externos.
- */
-
 interface Project {
   readonly id: string;
   readonly name: string;
@@ -30,104 +21,60 @@ export function Projects({ title, subtitle, projects }: ProjectsProps) {
   return (
     <section
       id="projects"
-      className="section-divider py-24 px-4 sm:px-6 lg:px-8 bg-slate-900/40"
+      className="section-divider px-5 py-12 md:px-10 md:py-20 xl:px-30"
       aria-labelledby="projects-title"
     >
-      <div className="mx-auto max-w-5xl">
-        {/* Section label */}
-        <p className="font-mono text-[0.7rem] text-slate-600 tracking-widest uppercase mb-5">
-          03 / Projetos
-        </p>
+      <div className="mx-auto w-full max-w-360">
+        <p className="font-mono text-[11px] tracking-[0.16em] text-(--accent)">03 / PROJETOS</p>
 
-        <h2
-          id="projects-title"
-          className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-50 mb-3"
-        >
+        <h2 id="projects-title" className="mt-3 text-4xl font-bold text-(--text-primary)">
           {title}
         </h2>
 
         {subtitle && (
-          <p className="text-slate-500 text-sm mb-12 font-mono">{subtitle}</p>
+          <p className="mt-2 text-sm text-(--text-secondary) md:text-base">{subtitle}</p>
         )}
 
-        <div className="space-y-4">
+        <div className="mt-8 space-y-4 md:space-y-6">
           {projects.map((project) => (
-            // Open only external links in a new tab.
-            // Internal anchors (e.g. "#") remain same-tab.
             <article
               key={project.id}
-              className="relative pl-5 pr-5 py-5 rounded-md
-                         border border-slate-800 bg-slate-900/30
-                         hover:border-slate-700 hover:bg-slate-900/60
-                         transition-colors duration-200
-                         /* Status border = service is active */
-                         before:absolute before:left-0 before:top-4 before:bottom-4
-                         before:w-0.5 before:bg-green-500/60 before:rounded-full
-                         before:hover:bg-green-500
-                         before:transition-colors before:duration-200"
+              className="flex items-start gap-4 rounded-xl border border-(--border-subtle) bg-(--bg-surface) px-4 py-5 md:gap-6 md:px-8 md:py-7"
             >
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
-                <div className="min-w-0">
-                  {/* Service status badge + name */}
-                  <div className="flex items-center gap-2 mb-1">
-                    <span
-                      aria-hidden="true"
-                      className="font-mono text-[0.6rem] text-green-500/70
-                                 border border-green-500/20 rounded px-1.5 py-0.5
-                                 tracking-widest uppercase bg-green-500/5"
+              <span aria-hidden="true" className="mt-1 h-20 w-0.75 shrink-0 rounded bg-(--accent)" />
+
+              <div className="min-w-0">
+                <p className="font-mono text-[11px] text-(--text-muted)">{project.role}</p>
+                <h3 className="mt-1 text-xl font-semibold text-(--text-primary)">
+                  {project.link ? (
+                    <a
+                      href={project.link}
+                      target={isExternalHref(project.link) ? "_blank" : undefined}
+                      rel={isExternalHref(project.link) ? "noopener noreferrer" : undefined}
+                      className="transition-colors hover:text-(--accent)"
                     >
-                      ATIVO
+                      {project.name}
+                    </a>
+                  ) : (
+                    project.name
+                  )}
+                </h3>
+
+                <p className="mt-2 text-sm leading-relaxed text-(--text-secondary) md:text-base">
+                  {project.description}
+                </p>
+
+                <div className="mt-3 flex flex-wrap gap-1.5" aria-label="Tecnologias utilizadas">
+                  {project.technologies.map((tech, index) => (
+                    <span
+                      key={index}
+                      translate="no"
+                      className="rounded border border-(--border-subtle) px-2 py-1 text-[11px] text-(--text-secondary)"
+                    >
+                      {tech}
                     </span>
-                    <h3 className="text-base font-semibold text-slate-100">
-                      {project.link ? (
-                        <a
-                          href={project.link}
-                          target={isExternalHref(project.link) ? "_blank" : undefined}
-                          rel={isExternalHref(project.link) ? "noopener noreferrer" : undefined}
-                          aria-label={
-                            isExternalHref(project.link)
-                              ? `Ver projeto ${project.name} (abre em nova aba)`
-                              : `Ver projeto ${project.name}`
-                          }
-                          className="hover:text-green-400
-                                     transition-colors duration-150 rounded-sm
-                                     focus-visible:outline-2
-                                     focus-visible:outline-offset-2 focus-visible:outline-green-500"
-                        >
-                          {project.name}
-                        </a>
-                      ) : (
-                        project.name
-                      )}
-                    </h3>
-                  </div>
-                  <p className="font-mono text-[0.7rem] text-slate-600 tracking-wide">
-                    {project.role}
-                  </p>
+                  ))}
                 </div>
-              </div>
-
-              {/* Description */}
-              <p className="text-sm text-slate-400 leading-relaxed mb-4 wrap-break-word">
-                {project.description}
-              </p>
-
-              {/* Tech tags */}
-              <div
-                className="flex flex-wrap gap-1.5"
-                aria-label="Tecnologias utilizadas"
-              >
-                {project.technologies.map((tech, index) => (
-                  <span
-                    key={index}
-                    translate="no"
-                    className="inline-block px-2 py-0.5 text-[0.7rem] font-mono
-                               border border-slate-700/60 text-slate-500
-                               rounded bg-slate-800/40"
-                  >
-                    {tech}
-                  </span>
-                ))}
               </div>
             </article>
           ))}
