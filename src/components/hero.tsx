@@ -76,7 +76,7 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
         <figure className="w-full overflow-hidden rounded-2xl border border-(--border-subtle) bg-(--bg-surface) lg:w-105">
           <div className="relative h-60 w-full md:h-80">
             <Image
-              src="/brand-portrait.webp"
+              src="/imagen_main.png"
               alt="Belício Cardoso"
               fill
               priority
