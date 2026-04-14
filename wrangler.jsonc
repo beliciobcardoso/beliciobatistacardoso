@@ -1,14 +1,24 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
+  "build": {
+    "command": "pnpm build"
+  },
+  "main": ".open-next/worker.js",
   "name": "beliciobatistacardoso",
   "compatibility_date": "2026-04-09",
   "compatibility_flags": [
     "nodejs_compat"
   ],
-  "main": "vinext/server/app-router-entry",
   "assets": {
-    "not_found_handling": "none"
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
   },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "beliciobatistacardoso"
+    }
+  ],
   "images": {
     "binding": "IMAGES"
   },
