@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "postinstall": "bash scripts/postinstall.sh",
     "portrait:generate": "tsx scripts/generate-profile-photo.ts",
     "cv:generate": "tsx scripts/generate-cv-pdf.ts",
     "prebuild": "pnpm run portrait:generate && pnpm run cv:generate",
     "build": "next build",
     "postbuild": "mkdir -p .next/standalone/.next/server && if [ -f .next/server/pages-manifest.json ]; then cp .next/server/pages-manifest.json .next/standalone/.next/server/pages-manifest.json; else printf '{}' > .next/standalone/.next/server/pages-manifest.json; fi && opennextjs-cloudflare build --skipNextBuild",
     "build:next": "next build",
+    "build:vinext": "vite build",
     "dev": "next dev",
+    "dev:vinext": "vite dev --port 3001",
     "start": "next start",
     "lint": "eslint",
     "preview": "pnpm run build && opennextjs-cloudflare preview",
@@ -21,20 +24,27 @@
     "@opennextjs/cloudflare": "^1.18.1",
     "@react-pdf/renderer": "^4.4.0",
     "next": "16.2.2",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react": "19.2.5",
+    "react-dom": "19.2.5"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.32.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitejs/plugin-rsc": "^0.5.24",
     "eslint": "^9",
     "eslint-config-next": "16.2.2",
+    "glob": "^13.0.6",
+    "react-server-dom-webpack": "^19.2.5",
     "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "tsx": "^4.21.0",
     "typescript": "^5",
-    "wrangler": "^4.81.0"
-  }
+    "vinext": "^0.0.41",
+    "vite": "^8.0.8",
+    "wrangler": "^4.82.2"
+  },
+  "type": "module"
 }
