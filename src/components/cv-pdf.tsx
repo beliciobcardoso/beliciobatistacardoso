@@ -85,6 +85,12 @@ const styles = StyleSheet.create({
     color: "#444",
     lineHeight: 1.4,
   },
+  bulletItem: {
+    fontSize: 9,
+    marginBottom: 2,
+    color: "#444",
+    lineHeight: 1.35,
+  },
   skillsList: {
     display: "flex",
     flexDirection: "row",
@@ -131,6 +137,10 @@ export function CVPDFDocument() {
             <Text>{cvData.personal.phone}</Text>
             <Text>{cvData.personal.location}</Text>
           </View>
+          <View style={styles.contactInfo}>
+            <Text>{cvData.personal.linkedin}</Text>
+            <Text>{cvData.personal.github}</Text>
+          </View>
         </View>
 
         {/* Summary */}
@@ -151,10 +161,50 @@ export function CVPDFDocument() {
                 <Text style={styles.entryPeriod}>{exp.period}</Text>
               </View>
               <Text style={styles.description}>{exp.description}</Text>
+              {exp.achievements?.map((achievement, aidx) => (
+                <Text key={aidx} style={styles.bulletItem}>
+                  • {achievement}
+                </Text>
+              ))}
               <View style={styles.skillsList}>
                 {exp.skills.map((skill, sidx) => (
                   <Text key={sidx} style={styles.skillTag}>
                     {skill}
+                  </Text>
+                ))}
+              </View>
+            </View>
+          ))}
+        </View>
+
+        {/* Certifications */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>CERTIFICAÇÕES</Text>
+          {cvData.certifications.map((cert, idx) => (
+            <View key={idx} style={{ marginBottom: 6 }}>
+              <View style={styles.entryHeader}>
+                <View>
+                  <Text style={styles.entryTitle}>{cert.name}</Text>
+                  <Text style={styles.entrySubtitle}>{cert.issuer}</Text>
+                </View>
+                <Text style={styles.entryPeriod}>{cert.year}</Text>
+              </View>
+            </View>
+          ))}
+        </View>
+
+        {/* Projects */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>PROJETOS DE DESTAQUE</Text>
+          {cvData.projects.map((project, idx) => (
+            <View key={idx} style={{ marginBottom: 8 }}>
+              <Text style={styles.entryTitle}>{project.name}</Text>
+              <Text style={styles.description}>{project.description}</Text>
+              <Text style={styles.entrySubtitle}>{project.url}</Text>
+              <View style={styles.skillsList}>
+                {project.technologies.map((tech, tidx) => (
+                  <Text key={tidx} style={styles.skillTag}>
+                    {tech}
                   </Text>
                 ))}
               </View>

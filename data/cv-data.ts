@@ -1,7 +1,7 @@
 export const cvData = {
   personal: {
-    name: "Belício Batista Cardoso",
-    title: "Engenheiro de Software Sênior | Arquiteto de Soluções",
+    name: "Belicio Batista Cardoso",
+    title: "Desenvolvedor Fullstack Sênior | DevOps, Arquitetura e Observabilidade",
     email: "belloinfo@gmail.com",
     phone: "+55 (71) 9 9370-6925",
     location: "Salvador, Bahia, Brasil",
@@ -10,55 +10,55 @@ export const cvData = {
     github: "https://github.com/beliciobcardoso",
   },
   summary:
-    "Arquiteto de soluções com 24 anos de experiência em tecnologia. Especialista em arquitetura de microsserviços, APIs de alta performance (NestJS), DevOps e observabilidade. Combina visão estratégica de negócio com rigor técnico em Clean Code e princípios SOLID. Pós-graduando em Engenharia de Software.",
+    "Profissional sênior com 24+ anos em tecnologia, atuando no ciclo completo de produtos digitais: arquitetura, backend, frontend, infraestrutura e sustentação. Especialista em Node.js, NestJS, React, Next.js e PostgreSQL, com forte prática em DevOps, CI/CD, observabilidade e qualidade de software. Converte requisitos de negócio em soluções escaláveis, seguras e com foco em performance, manutenção e previsibilidade operacional.",
 
   experience: [
     {
       title: "Analista de Desenvolvimento Pleno",
       company: "Nova Corrente",
       period: "2025 - Presente",
-      description:
-        "Desenvolvedor fullstack (Node.js/NestJS, React, PostgreSQL). DevOps com Docker e observabilidade via Grafana/Prometheus.",
-      skills: ["NestJS", "React", "PostgreSQL", "Docker", "Grafana", "Prometheus"],
+      description: "Atuação em evolução de sistemas Fullstack com foco em estabilidade, performance e entrega contínua.",
+      achievements: [
+        "Desenvolvimento e manutenção de APIs e interfaces web usando Node.js, NestJS, React e PostgreSQL.",
+        "Aprimoramento de fluxos de entrega com práticas de CI/CD e padronização de processos técnicos.",
+        "Monitoramento de aplicações com Grafana e Prometheus para apoio a diagnóstico e redução de indisponibilidade.",
+        "Aplicação de princípios de Clean Code, SOLID e revisão técnica para elevar qualidade e legibilidade do código.",
+      ],
+      skills: ["Node.js", "NestJS", "React", "PostgreSQL", "Docker", "Grafana", "Prometheus", "CI/CD"],
     },
     {
-      title: "Founder & CTO",
-      company: "FinDomini",
-      period: "2021 - Presente",
+      title: "Técnico Pleno de Suporte e Infraestrutura",
+      company: "Sul Soluções em Informática",
+      period: "2021 - 2025",
       description:
-        "Arquiteto e desenvolvedor de plataforma de gestão financeira centralizada. Integração com múltiplas fontes de dados. APIs RESTful e gráficos de análise em tempo real.",
-      skills: ["NestJS", "TypeScript", "React", "Chart.js", "Axios"],
-    },
-    {
-      title: "Lead Software Engineer",
-      company: "Nexus CRM",
-      period: "2020 - 2021",
-      description:
-        "Desenvolvimento de camadas de integração inteligente com WhatsApp. Arquitetura de fila de mensagens, processamento assíncrono e persistência em Redis.",
-      skills: ["Node.js", "Redis", "Queue Management", "API Integration"],
-    },
-    {
-      title: "Senior Backend Engineer",
-      company: "Empresa XYZ Tech",
-      period: "2015 - 2020",
-      description:
-        "Liderança técnica em times de backend. Migração de monolito para microsserviços. CI/CD com GitLab Runners, Kubernetes e Helm.",
-      skills: ["Kubernetes", "Helm", "CI/CD", "Docker", "Microservices"],
+        "Gestão de infraestrutura e suporte técnico avançado em ambientes locais e em nuvem.",
+      achievements: [
+        "Administração de servidores, redes e serviços críticos para operação contínua de clientes.",
+        "Atendimento de incidentes de média e alta criticidade com foco em tempo de resposta e continuidade de negócio.",
+        "Implementação de melhorias de segurança, backup e rotinas operacionais para aumento de confiabilidade.",
+        "Apoio técnico a times de desenvolvimento e operações em integrações e diagnóstico de ambientes.",
+      ],
+      skills: ["Infraestrutura", "Ubuntu Server", "Redes", "Segurança", "Backup", "Suporte Avançado"],
     },
   ],
 
   education: [
     {
       degree: "Pós-graduação em Engenharia de Software",
-      institution: "UNIVERSIDADE ESTÁCIO DE SÁ (em andamento)",
+      institution: "Universidade Estácio de Sá",
       year: "2025 - Presente",
       focus:
-        "Arquitetura de Sistemas, Metodologias Ágeis, Computação em Nuvem",
+        "Modelagem de Dados, Arquitetura de Sistemas, Segurança da Informação, Qualidade de Software e Gestão Estratégica de TI",
     },
     {
-      degree: "ANÁLISE E DESENVOLVIMENTO DE SISTEMAS",
-      institution: "UNIVERSIDADE ESTÁCIO DE SÁ",
+      degree: "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+      institution: "Universidade Estácio de Sá",
       year: "2018 - 2021",
+    },
+    {
+      degree: "Técnico em Eletrônica",
+      institution: "Formação técnica com foco em hardware e sistemas",
+      year: "Concluído",
     },
   ],
 
@@ -69,63 +69,60 @@ export const cvData = {
       "Express",
       "TypeScript",
       "PostgreSQL",
-      "MongoDB",
+      "SQL Server",
       "Prisma ORM",
-      "Arquitetura de Microsserviços",
+      "Arquitetura de APIs",
     ],
-    frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS", "CSS Module"],
+    frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Interfaces Responsivas"],
     devops: [
       "Docker",
       "Kubernetes",
-      "Helm",
-      "CI/CD (GitHub Actions, GitLab)",
-      "Terraform",
-      "AWS",
+      "CI/CD",
       "Cloudflare",
+      "Ubuntu Server",
     ],
-    observability: ["Prometheus", "Grafana", "ELK Stack", "DataDog"],
+    observability: ["Prometheus", "Grafana", "Logs e Métricas", "Monitoramento de Serviços"],
     methodologies: [
       "Clean Code",
-      "SOLID Principles",
+      "Princípios SOLID",
+      "Clean Architecture",
       "Design Patterns",
-      "Commits Semânticos",
-      "TDD",
       "Agile/Scrum",
     ],
   },
 
   certifications: [
     {
-      name: "AWS Solutions Architect Associate",
-      issuer: "Amazon Web Services",
-      year: "2022",
+      name: "Power BI Impressionador",
+      issuer: "Hashtag Treinamentos",
+      year: "2024 - 2025",
     },
     {
-      name: "Kubernetes for Developers",
-      issuer: "Linux Foundation",
-      year: "2021",
+      name: "Especialista em Ecossistema Fullstack (Node.js/React)",
+      issuer: "Formação profissional",
+      year: "Atual",
     },
   ],
 
   projects: [
     {
-      name: "My Time Trace",
+      name: "Plataforma Fullstack de Operações Internas",
       description:
-        "Plataforma SaaS de rastreamento de tempo e análise de produtividade com dashboard em tempo real.",
-      url: "https://mytimetrace.com",
-      technologies: ["NestJS", "React", "PostgreSQL", "Grafana"],
+        "Projeto focado em automação de processos, integração entre áreas e visibilidade operacional por indicadores.",
+      url: "https://novacorrente.smarttower.app",
+      technologies: ["Node.js", "NestJS", "React", "PostgreSQL", "Grafana", "Prometheus"],
     },
     {
-      name: "FinDomini",
+      name: "Pipeline de Entrega e Observabilidade",
       description:
-        "Sistema de gestão financeira integrada com múltiplas instituições bancárias.",
-      url: "https://findomi.com",
-      technologies: ["NestJS", "React", "PostgreSQL", "Stripe API"],
+        "Estrutura de CI/CD e monitoramento para elevar previsibilidade de deploy e acelerar resolução de incidentes.",
+      url: "https://github.com/beliciobcardoso",
+      technologies: ["Docker", "CI/CD", "Prometheus", "Grafana", "Cloudflare"],
     },
   ],
 
   languages: [
     { language: "Português", level: "Nativo" },
-    { language: "Inglês", level: "Básico" },
+    { language: "Inglês", level: "Técnico (leitura de documentação e comunicação escrita)" },
   ],
 };

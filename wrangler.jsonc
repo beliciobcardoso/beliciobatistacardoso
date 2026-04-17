@@ -1,29 +1,5 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "env": {
-    "development": {
-      "main": "vinext/server/app-router-entry",
-      "assets": {
-        "not_found_handling": "none"
-      }
-    },
-    "production": {
-      "build": {
-        "command": "pnpm build"
-      },
-      "main": ".open-next/worker.js",
-      "assets": {
-        "directory": ".open-next/assets",
-        "binding": "ASSETS"
-      },
-      "services": [
-        {
-          "binding": "WORKER_SELF_REFERENCE",
-          "service": "beliciobatistacardoso"
-        }
-      ]
-    }
-  },
   "name": "beliciobatistacardoso",
   "compatibility_date": "2026-04-09",
   "compatibility_flags": [
