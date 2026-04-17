@@ -24,30 +24,44 @@ This project has been successfully migrated from **Next.js** to **vinext**, a Vi
 
 ## How to Use
 
-### Development
+### Local Development (vinext)
 ```bash
-# Start vinext dev server (recommended)
+# Start vinext dev server with wrangler (recommended for testing Cloudflare locally)
 pnpm run dev:vinext
 
-# Or use the old Next.js server (still works)
+# Or use the old Next.js server
 pnpm run dev
 ```
 
-### Production Build
+### Production Build & Deployment
 ```bash
-# Build with vinext for Cloudflare Workers
-pnpm run build:vinext
-
-# Or use the old Next.js build (still works)
+# Build with Next.js + opennextjs-cloudflare (for production)
 pnpm run build
+
+# Deploy to Cloudflare Workers (uses production wrangler config)
+pnpm run deploy
 ```
 
-### Deployment
-The Cloudflare Workers deployment is now handled via vinext:
+### Testing with Vite (optional)
 ```bash
-# Uses wrangler + @cloudflare/vite-plugin
+# Build with vinext for testing
 pnpm run build:vinext
 ```
+
+## Environment Configurations
+
+### Development (`wrangler.jsonc` - default)
+- Uses **vinext** for fast development
+- Main entry: `vinext/server/app-router-entry`
+- Assets: Not found handling (for testing)
+- Optimized for HMR and rapid iteration
+
+### Production (`wrangler.jsonc` - production env)
+- Uses **Next.js + opennextjs-cloudflare** build
+- Main entry: `.open-next/worker.js`
+- Assets: Served from `.open-next/assets` directory
+- Services: Worker self-reference for multi-region setup
+- Optimized for performance and Cloudflare features
 
 ## What Works Without Changes
 
